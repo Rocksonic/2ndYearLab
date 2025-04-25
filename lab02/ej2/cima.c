@@ -13,10 +13,23 @@
  * @param length Largo del arreglo.
  */
 bool tiene_cima(int a[], int length) {
-
-    // COMPLETAR!!
-
-    return false;
+    bool cima_is_real = true;
+    bool subiendo = true;
+    bool bajando = false;
+    for (int i = 0; i < length - 1  && cima_is_real; i++)
+    {
+        if (!(a[i] < a[i+1]) && !bajando)
+        {
+            subiendo = false;
+            bajando = true;
+        }
+        
+        if (a[i] < a[i+1] && bajando)
+        {
+            cima_is_real = false;
+        } 
+    }
+    return cima_is_real && bajando;
 }
 
 /**
@@ -32,8 +45,13 @@ bool tiene_cima(int a[], int length) {
  * @param length Largo del arreglo.
  */
 int cima(int a[], int length) {
-
-    // COMPLETAR!!
-
-    return 0;
+    int top = -1;
+    if (tiene_cima(a, length))
+    {
+        for (int i = 0; i < length - 1; i++)
+        {
+            if (a[i] < a[i+1]) top = i+1;
+        }
+    }
+    return top;
 }
