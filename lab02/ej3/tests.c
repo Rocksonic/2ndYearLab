@@ -14,9 +14,7 @@ int main() {
 
     struct testcase tests[N_TESTCASES_CIMA] = {
         { {8}, 1, 0 },
-
-        // COMPLETAR!!
-
+        { {1, 2, 3, 4, 5}, 5, -1}
     };
     int result;
 
