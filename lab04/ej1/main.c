@@ -22,17 +22,30 @@ int main(void) {
     person_t m = {90, 'M'};
     int a[] = {0, 1, 2, 3};
 
-    /* Completar aquí:
-       Al finalizar la ejecución las variables deben tener los siguientes valores
-       x = 9
-       m = (100, F)
-       a[1] = 42
+    int *ptr = NULL;
+    person_t *personPtr = NULL;
+    
+    ptr = &x;
+    *ptr = 9;
+    
+    personPtr = &m;
+    personPtr->age = 100;
+    personPtr->name_initial = 'F';
 
-       Las restricciones son:
-       - No usar las variables 'x', 'm' y 'a' en la parte izquierda de alguna asignación.
-       - Se pueden agregar líneas de código, pero no modificar las que ya existen.
-       - Se pueden declarar hasta 2 punteros.
-       AYUDA: podes usar GDB para consultares valores de variables y la dirección de memoria donde estan alojadas.
+    ptr = &a[1];
+    *ptr = 42;
+
+    /* Completar aquí:
+      Al finalizar la ejecución las variables deben tener los siguientes valores
+      x = 9
+      m = (100, F)
+      a[1] = 42
+
+      Las restricciones son:
+      - No usar las variables 'x', 'm' y 'a' en la parte izquierda de alguna asignación.
+      - Se pueden agregar líneas de código, pero no modificar las que ya existen.
+      - Se pueden declarar hasta 2 punteros.
+      AYUDA: podes usar GDB para consultares valores de variables y la dirección de memoria donde estan alojadas.
     */
 
     printf("x = %d\n", x);
@@ -41,4 +54,3 @@ int main(void) {
 
     return EXIT_SUCCESS;
 }
-
